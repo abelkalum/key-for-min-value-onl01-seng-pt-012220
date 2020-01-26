@@ -4,8 +4,14 @@
 hash = {:blake => 500, :ashley => 2, :adam => 1}
 
 def key_for_min_value(name_hash)
-  hash.collect do |name, value|
-   if name == smallest value
-    return the name with the smallest value
+  lowest_value = 0
+  lowest_key = nil
+  
+  name_hash.each do |key,value|
+    if lowest_value == 0 || value < lowest_value
+      lowest_value = value 
+      lowest_key = key
+    end
   end
+  lowest_key
 end
